@@ -1,0 +1,7 @@
+name: YAML error
+on: push
+jobs:
+  hello:
+    run-on: ubuntu-latest
+    steps:
+    - run: echo "YAML Syntax Error"
