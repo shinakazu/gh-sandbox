@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S JST'
+          TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S JST'
       - uses: actions/checkout@v4
