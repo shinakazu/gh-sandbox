@@ -10,6 +10,7 @@ jobs:
     steps:
       - run: echo "jobs.run.env.BRANCH - ${BRANCH}"
       - uses: actions/checkout@v4
+        with:
           ref: ${{ env.BRANCH }}
       - run: echo "env.EXAMPLE - ${EXAMPLE}"
       - env:
