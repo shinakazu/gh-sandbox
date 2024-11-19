@@ -1,0 +1,9 @@
+name: Show push time (JST)
+on: push
+jobs:
+  show-push-time:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S JST'
+      - uses: actions/checkout@v4
