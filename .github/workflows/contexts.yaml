@@ -1,0 +1,24 @@
+name: Contexts
+on: push
+jobs:
+  show-push-time:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "### github contexts ###"
+          echo "actor : ${{ github.actor }}"
+          echo "run_id : ${{ github.run_id }}"
+          echo "head_ref : ${{ github.head_ref }}"
+          echo "workspace : ${{ github.workspace }}"
+          echo "repository : ${{ github.repository }}"
+          echo "repository_owner : ${{ github.repository_owner }}"
+          echo "event : ${{ github.event }}"
+          echo ""
+          echo "### runner contexts ###"
+          echo "name : ${{ runner.name }}"
+          echo "os : ${{ runner.os }}"
+          echo "arch : ${{ runner.arch }}"
+          echo "temp : ${{ runner.temp }}"
+          echo "tool_cache : ${{ runner.tool_cache }}"
+          echo "degub : ${{ runner.debug }}"
+
