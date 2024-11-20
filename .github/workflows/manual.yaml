@@ -7,8 +7,17 @@ on:
         default: Hello
         required: true
         description: A cheeful word
+      log-level:
+        type: choice
+        options:
+          - info
+          - warn
+          - error 
+    
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ inputs.greeting }}"
+      - run: |
+          echo "${{ inputs.greeting }}"
+          echo "log levei : ${{ inputs.log-level }}"
