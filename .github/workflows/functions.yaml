@@ -11,6 +11,14 @@ jobs:
           ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }}
           CONTAINS_CHECKBUG_FUNC: ${{ contains(github.event.issue.labels.*.name, 'bug') }}
 
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - run: printenv | grep '_FUNC'
+        env:
+          FORMAT_FUNC: ${{ format('{0], {1}.', 'Hi', 'world') }}
+          JOIN_FUNC: ${{ join(github.event.*.html_url, ', ') }}
+
       
 
       
