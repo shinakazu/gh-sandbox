@@ -1,0 +1,17 @@
+name: Functions
+on: push
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - run: printenv | grep '_FUNC'
+        env:
+          CONTAINS_FUNC: ${{ contains('Hello', 'ell') }}
+          START_WITH_FUNC: ${{ startsWith('Hello', 'He') }}
+          ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }}
+          CONTAINS_CHECKBUG_FUNC: ${{ contains(github.event.issue.labels.*.name, 'bug') }}
+
+      
+
+      
+
