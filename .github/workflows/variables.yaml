@@ -1,0 +1,16 @@
+name: Variables
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env:
+      USERNAME: ${{ vars.USERNAME }}
+      HOGE: ${{ vars.HOGEHOGE }} 
+    steps:
+      - run: |
+          echo "USERNAME is ${USERNAME}"
+          echo "HOGE is ${HOGE}"
+
+
+      
+
