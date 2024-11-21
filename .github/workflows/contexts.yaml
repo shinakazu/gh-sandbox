@@ -1,7 +1,7 @@
 name: Contexts
 on: push
 jobs:
-  show-push-time:
+  print:
     runs-on: ubuntu-latest
     steps:
       - run: |
@@ -22,3 +22,12 @@ jobs:
           echo "tool_cache : ${{ runner.tool_cache }}"
           echo "degub : ${{ runner.debug }}"
 
+  print-all:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "### github contexts ###"
+          echo "${{ github }}"
+          echo ""
+          echo "### runner contexts ###"
+          echo "${{ runner }}"
