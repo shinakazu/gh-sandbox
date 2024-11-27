@@ -1,0 +1,16 @@
+name: Auto PR from dev to main
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  create-pr-automatically:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Create Pull Request
+      run: gh pr create --base main --head dev --title "Auto Pull Request from dev to main - $(TZ=JST-9 date '+%F %T')" --body ""
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
