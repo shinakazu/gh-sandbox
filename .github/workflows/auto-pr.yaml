@@ -11,6 +11,6 @@ jobs:
       with:
         fetch-depth: 0
     - name: Create Pull Request
-      run: gh pr create --base main --head dev --title "Auto Pull Request from dev to main - $(TZ=JST-9 date '+%F %T') JST" --body ""
+      run: gh pr create --base main --head dev --title "Auto Pull Request from dev to main - $(TZ=JST-9 date '+%F %T') JST" --body "" || true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
