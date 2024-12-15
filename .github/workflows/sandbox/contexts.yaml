@@ -8,7 +8,6 @@ jobs:
           echo "### github contexts ###"
           echo "actor : ${{ github.actor }}"
           echo "run_id : ${{ github.run_id }}"
-          # echo "head_ref : ${{ github.head_ref }}"
           echo "workspace : ${{ github.workspace }}"
           echo "repository : ${{ github.repository }}"
           echo "repository_owner : ${{ github.repository_owner }}"
