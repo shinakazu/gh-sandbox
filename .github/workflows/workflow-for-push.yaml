@@ -1,4 +1,4 @@
-name: Contexts for the push
+name: Contexts about push
 on: push
 jobs:
   print-contexts:
