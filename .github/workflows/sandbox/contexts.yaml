@@ -6,20 +6,20 @@ jobs:
     steps:
       - run: |
           echo "### github contexts ###"
-          echo "actor : ${{ github.actor }}"
-          echo "run_id : ${{ github.run_id }}"
-          echo "workspace : ${{ github.workspace }}"
-          echo "repository : ${{ github.repository }}"
-          echo "repository_owner : ${{ github.repository_owner }}"
-          echo "event : ${{ github.event }}"
+#          echo "actor : ${{ github.actor }}"
+#          echo "run_id : ${{ github.run_id }}"
+#          echo "workspace : ${{ github.workspace }}"
+#          echo "repository : ${{ github.repository }}"
+#          echo "repository_owner : ${{ github.repository_owner }}"
+#          echo "event : ${{ github.event }}"
       - run: |
           echo "### runner contexts ###"
-          echo "name : ${{ runner.name }}"
-          echo "os : ${{ runner.os }}"
-          echo "arch : ${{ runner.arch }}"
-          echo "temp : ${{ runner.temp }}"
-          echo "tool_cache : ${{ runner.tool_cache }}"
-          echo "degub : ${{ runner.debug }}"
+#          echo "name : ${{ runner.name }}"
+#          echo "os : ${{ runner.os }}"
+#          echo "arch : ${{ runner.arch }}"
+#          echo "temp : ${{ runner.temp }}"
+#          echo "tool_cache : ${{ runner.tool_cache }}"
+#          echo "degub : ${{ runner.debug }}"
 
 #  print-all:
 #    runs-on: ubuntu-latest
