@@ -8,7 +8,7 @@ jobs:
           echo "### github contexts ###"
           echo "actor : ${{ github.actor }}"
           echo "run_id : ${{ github.run_id }}"
-          echo "head_ref : ${{ github.head_ref }}"
+          # echo "head_ref : ${{ github.head_ref }}"
           echo "workspace : ${{ github.workspace }}"
           echo "repository : ${{ github.repository }}"
           echo "repository_owner : ${{ github.repository_owner }}"
@@ -22,12 +22,12 @@ jobs:
           echo "tool_cache : ${{ runner.tool_cache }}"
           echo "degub : ${{ runner.debug }}"
 
-  print-all:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "### github contexts ###"
-          echo "${{ github }}"
-          echo ""
-          echo "### runner contexts ###"
-          echo "${{ runner }}"
+#  print-all:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - run: |
+#          echo "### github contexts ###"
+#          echo "${{ github }}"
+#          echo ""
+#          echo "### runner contexts ###"
+#          echo "${{ runner }}"
