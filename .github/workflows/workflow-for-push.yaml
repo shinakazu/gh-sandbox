@@ -7,9 +7,12 @@ jobs:
       - name: print push time (JST)
         run: |
           TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S JST'
+
       - name: Print github contexts
-        run: |
-          echo "${{ toJSON(github) }}"
+        run: echo "${CONTEXT}"
+        env:
+          CONTEXT: "${{ toJSON(github) }}"
+          
       - name: Print runner contexts
         run: |
           echo "${{ toJSON(runner) }}"
