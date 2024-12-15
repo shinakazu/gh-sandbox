@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest || true
+          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
