@@ -12,7 +12,7 @@ jobs:
           echo "repository : ${{ github.repository }}"
           echo "repository_owner : ${{ github.repository_owner }}"
           echo "event : ${{ github.event }}"
-          echo ""
+      - run: |
           echo "### runner contexts ###"
           echo "name : ${{ runner.name }}"
           echo "os : ${{ runner.os }}"
