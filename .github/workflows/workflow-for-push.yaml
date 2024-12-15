@@ -1,18 +1,19 @@
-name: Workflow for push
+name: Contexts about push
 on: push
 jobs:
-  print:
+  print-contexts:
     runs-on: ubuntu-latest
     steps:
-      - name: print push time (JST)
-        run: |
-          TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S JST'
+      - name: Print push time (JST)
+        run: TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S JST'
+
+      - name: Print runner contexts
+        run: echo "${CONTEXT}" 
+        env:
+          CONTEXT: "${{ toJSON(runner) }}"
 
       - name: Print github contexts
         run: echo "${CONTEXT}"
         env:
           CONTEXT: "${{ toJSON(github) }}"
-          
-      - name: Print runner contexts
-        run: |
-          echo "${{ toJSON(runner) }}"
+
