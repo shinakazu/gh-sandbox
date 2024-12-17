@@ -1,0 +1,12 @@
+name: Change shell
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: echo "${SHELL}"
+      - shell: python
+        run: |
+          import os
+          print(os.environ['PATH'])
