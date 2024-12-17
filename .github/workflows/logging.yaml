@@ -4,15 +4,20 @@ jobs:
   debug-log:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "This is a log"
       - run: echo "::debug::This is a debug log"
 
   bash-tracing:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          date
+          hostname        
+      - run: |
           set -x
           date
           hostname
+          set +x
 
   log-group:
     runs-on: ubuntu-latest
