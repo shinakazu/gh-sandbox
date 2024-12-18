@@ -1,0 +1,38 @@
+name: Matrix
+on: push
+jobs:
+  print-matrix:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: echo "${RUNNER_OS}"
+        shell: bash
+
+  print-multi-dimension-matrix:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        version: [18, 20]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.version }}
+      - run: echo "${RUNNER_OS}" && node --version
+
+  print-manual-matrix:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            version: 20
+          - os: macos-latest
+            version: 18
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.version }}
+      - run: echo "${RUNNER_OS}" && node --version
