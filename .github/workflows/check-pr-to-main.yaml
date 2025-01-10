@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check if PR is from dev to main branch
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
-          if [ "${{ github.event.pull_request.head.ref }}" != "dev" ]; then
+          if [ "$HEAD_REF" != "dev" ]; then
             echo "Pull request not from dev to main branch"
             exit 1
           else
