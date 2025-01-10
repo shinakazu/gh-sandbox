@@ -1,0 +1,21 @@
+name: Check PR to dev
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - dev
+jobs:
+  check_branch:
+    name: Check branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR is from non-main to dev branch
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          if [ "$HEAD_REF" == "main" ]; then
+            echo "Pull request is from main to dev branch"
+            exit 1
+          else
+            echo "Pull request from non-main to dev branch"
+          fi
